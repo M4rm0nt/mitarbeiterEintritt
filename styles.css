@@ -1,7 +1,6 @@
-/* styles.css */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f4f7;
     color: #333;
     line-height: 1.6;
     margin: 0;
@@ -9,18 +8,18 @@ body {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 960px;
     margin: 20px auto;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
     text-align: center;
     margin-bottom: 20px;
-    color: #5D93E1;
+    color: #4CAF50;
 }
 
 form {
@@ -29,16 +28,21 @@ form {
 }
 
 fieldset {
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
     padding: 20px;
-    border-radius: 4px;
     margin-bottom: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 legend {
     font-size: 1.2em;
     margin-bottom: 10px;
-    color: #333;
+    color: #FF9800;
+    padding: 0 10px;
+    background-color: #fff;
+    border-radius: 4px;
 }
 
 .form-row {
@@ -50,10 +54,6 @@ legend {
 .form-column {
     flex: 1;
     margin-right: 20px;
-}
-
-.form-column:last-child {
-    margin-right: 0;
 }
 
 .form-group {
@@ -75,39 +75,30 @@ select {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    transition: border-color 0.3s;
 }
 
-textarea {
-    height: 100px;
-}
-
-.checkbox-group {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.checkbox-group input {
-    margin-right: 10px;
+input[type="text"]:focus,
+input[type="date"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #4CAF50;
+    outline: none;
 }
 
 button {
     padding: 10px 20px;
     border: none;
-    background-color: #5D93E1;
+    background-color: #4CAF50;
     color: white;
     border-radius: 4px;
     cursor: pointer;
     font-size: 1.1em;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #4a7abc;
-}
-
-button[type="submit"] {
-    margin-top: 20px;
+    background-color: #45a049;
 }
 
 @media screen and (max-width: 768px) {
