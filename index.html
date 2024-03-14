@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="de" ng-app="MitarbeiterEintritt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mitarbeiter Eintritt</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Formular für Mitarbeitereintritt</h1>
+    <div ng-view></div>
+</div>
+
+<script type="text/ng-template" id="form1.html">
+    <form name="mitarbeiterEintragForm" ng-submit="gehAufSeite2()">
+        <fieldset>
+            <legend>Mitarbeiter Kontaktdaten</legend>
+            <div class="form-row">
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="mitarbeiterVorname">Vorname des Mitarbeiters</label>
+                        <input type="text" id="mitarbeiterVorname" ng-model="request.mitarbeiterVorname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mitarbeiterNachname">Nachname des Mitarbeiters</label>
+                        <input type="text" id="mitarbeiterNachname" ng-model="request.mitarbeiterNachname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mitarbeiterStrasse">Straße</label>
+                        <input type="text" id="mitarbeiterStrasse" ng-model="request.mitarbeiterStrasse" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mitarbeiterHausnummer">Hausnummer</label>
+                        <input type="text" id="mitarbeiterHausnummer" ng-model="request.mitarbeiterHausnummer" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mitarbeiterPlz">PLZ</label>
+                        <input type="text" id="mitarbeiterPlz" ng-model="request.mitarbeiterPlz" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mitarbeiterWohnort">Wohnort</label>
+                        <input type="text" id="mitarbeiterWohnort" ng-model="request.mitarbeiterWohnort" required>
+                    </div>
+                </div>
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="mitarbeiterTelefon">Telefon</label>
+                        <input type="text" id="mitarbeiterTelefon" ng-model="request.mitarbeiterTelefon" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mitarbeiterMobilrufnummer">Mobilrufnummer</label>
+                        <input type="text" id="mitarbeiterMobilrufnummer" ng-model="request.mitarbeiterMobilrufnummer" required>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <button type="submit">Weiter</button>
+    </form>
+</script>
+
+<script type="text/ng-template" id="form2.html">
+    <form name="additionalDetailsForm" ng-submit="submitRequest()">
+        <fieldset>
+            <legend>Vertragliche Details</legend>
+            <div class="form-group">
+                <label for="abteilung">Abteilung</label>
+                <input type="text" id="abteilung" ng-model="request.abteilung" required>
+            </div>
+            <div class="form-group">
+                <label for="position">Position</label>
+                <input type="text" id="position" ng-model="request.position" required>
+            </div>
+            <div class="form-group">
+                <label for="gehalt">Gehalt</label>
+                <input type="text" id="gehalt" ng-model="request.gehalt" required>
+            </div>
+            <div class="form-group">
+                <label for="krankenkasseName">Krankenkasse Name</label>
+                <input type="text" id="krankenkasseName" ng-model="request.krankenkasseName" required>
+            </div>
+            <div class="form-group">
+                <label for="krankenkasseNummer">Krankenkasse Nummer</label>
+                <input type="text" id="krankenkasseNummer" ng-model="request.krankenkasseNummer" required>
+            </div>
+            <div class="form-group">
+                <label for="sozialversicherungsnummer">Sozialversicherungsnummer</label>
+                <input type="text" id="sozialversicherungsnummer" ng-model="request.sozialversicherungsnummer" required>
+            </div>
+            <div class="form-group">
+                <label for="rentenversicherungsnummer">Rentenversicherungsnummer</label>
+                <input type="text" id="rentenversicherungsnummer" ng-model="request.rentenversicherungsnummer" required>
+            </div>
+            <div class="form-group">
+                <label for="eintrittsdatum">Eintrittsdatum</label>
+                <input type="date" id="eintrittsdatum" ng-model="request.eintrittsdatum" required>
+            </div>
+            <div class="form-group">
+                <label for="probezeit">Probezeit</label>
+                <select id="probezeit" ng-model="request.probezeit" ng-options="option for option in probezeitOptionen" required></select>
+            </div>
+        </fieldset>
+        <button type="button" ng-click="goBackToForm1()">Zurück</button>
+        <button type="submit">Absenden</button>
+    </form>
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
